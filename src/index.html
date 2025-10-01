@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FruitBox - Help to Learn CSS</title>
+      <!-- Google Font Example -->
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <main>
+
+        <header class="sticky">
+            <div id="logo">
+                <img src="assets/media/logo.png" alt="logo">
+            </div>
+        
+            <!-- Hamburger Button -->
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        
+            <nav>
+                <ul id="navbar">
+                    <li><a class="active" href="index.html">Home</a></li>
+                    <li><a href="pages/play.html">Play</a></li>
+                    <!-- <li><a href="pages/leaderboard.html">Leaderboard</a></li> -->
+                    <li><a href="pages/about.html">About</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <article>
+            <div class="content">
+                <a href="pages/play.html">-PLAY-</a>            
+                <!-- <a href="pages/leaderboard.html">-Leaderboard-</a>             -->
+                <a href="">-Quit-</a>            
+            </div>
+        </article>
+    </main>
+
+    <script src="assets/JS/index.js"></script>
+</body>
+</html>

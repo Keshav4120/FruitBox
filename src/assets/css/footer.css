@@ -1,0 +1,132 @@
+/* ====== NAVBAR BASE ====== */
+.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: #50207A;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    z-index: 100;
+    box-sizing: border-box;
+}
+
+#logo img {
+    padding-top: 5px;
+    height: 100px;
+}
+
+/* ====== NAV LINKS ====== */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+}
+
+nav ul li a {
+    color: #FF48B9;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: 'Baloo Bhai 2', "GummyBear";
+    transition: color 0.3s, transform 0.2s;
+}
+
+nav ul li a:hover {
+    color: white;
+    transform: scale(1.1);
+}
+
+nav ul li a.active {
+    border-bottom: 2px solid #FF48B9;
+}
+
+/* ====== HAMBURGER ICON ====== */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: #FF48B9;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+/* ====== MOBILE STYLING ====== */
+/* ====== MOBILE VIEW ====== */
+@media (max-width: 768px) {
+    .sticky {
+        justify-content: flex-start;   /* sab left se start honge */
+        
+    }
+
+    #logo {
+        margin-left: 4px;   /* logo ko thoda right shift kar */
+        flex: none;
+    }
+
+    #logo img {
+        height: 50px;        /* mobile me thoda chhota logo */
+    }
+
+    nav ul {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: #3a125c;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        width: 200px;
+        padding: 15px;
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        border-radius: 0 0 8px 8px;
+        transition: max-height 0.4s ease, opacity 0.4s ease;
+    }
+
+    nav ul.show {
+        max-height: 500px;   /* dropdown open hoga */
+        opacity: 1;
+    }
+
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        margin-left: auto;   /* hamburger ko full right push karega */
+        cursor: pointer;
+    }
+
+    .hamburger span {
+        width: 25px;
+        height: 3px;
+        background: #FF48B9;
+        border-radius: 2px;
+        transition: 0.3s;
+    }
+
+    /* nav links mobile me */
+    nav ul li a {
+        font-size: 20px;
+        padding: 5px 0;
+        color: #FF48B9;
+    }
+
+    nav ul li a:hover {
+        color: white;
+        transform: scale(1.05);
+    }
+}
+

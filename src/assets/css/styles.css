@@ -1,0 +1,32 @@
+body {
+    background-color: #50207A;   /* Pure page ka background purple shade me ho jaega */
+}
+
+@font-face {
+    font-family: "GummyBear";   /* Ek custom font register kar raha hai */
+    src: url("font/BubblegumSans-Regular.ttf") format("truetype");  
+    /* Yeh font/ folder ke andar wali BubblegumSans-Regular.ttf ko load karega */
+}
+
+.content {
+    text-align: center;  
+    margin-top: 200px;
+    font-size: 70px;           
+    font-family: 'Baloo Bhai 2', "GummyBear";  
+    text-decoration: none;  
+    padding: 10px;               
+    color: #FF48B9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.content a {
+    text-decoration: none;   /* sari underline hata dega */
+    color: #FF48B9;
+    transition: 0.2s ease-in-out;
+}
+.content a:hover{
+    scale: 1.1;
+}
+  
