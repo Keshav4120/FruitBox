@@ -4,17 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FruitBox-Play</title>
-    <link rel="stylesheet" href="/src/assets/css/play.css">
+    <link rel="stylesheet" href="../assets/css/footer.css">
+    <link rel="stylesheet" href="../assets/css/play.css">
 </head>
 <body>
     <main>
-        <img src="../assets/media/28256.jpg" loading="lazy" alt="">
+        <header class="sticky">
+            <div id="logo">
+                <img src="../assets/media/logo.png" alt="logo">
+            </div>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        
+            <nav>
+                <ul id="navbar">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a class="active"href="pages/play.html">Play</a></li>
+                    <!-- <li><a href="pages/leaderboard.html">Leaderboard</a></li> -->
+                    <li><a href="pages/about.html">About</a></li>
+                </ul>
+            </nav>
+        </header>
 
+        <div id="img">
+            <img src="../assets/media/28256.jpg"  alt="">
+        </div>
 
         <article id="logo">
             <h1>FruitBox</h1>
         </article>
     </main>
+    <script src="../assets/JS/index.js"></script>
     
 </body>
 </html>

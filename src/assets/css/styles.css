@@ -24,7 +24,7 @@ body {
 .content a {
     text-decoration: none;   /* sari underline hata dega */
     color: #FF48B9;
-    transition: 0.2s ease-in-out;
+    transition: 0.3s ease-in-out;
 }
 .content a:hover{
     scale: 1.1;

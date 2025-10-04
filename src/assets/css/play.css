@@ -1,8 +1,18 @@
 body {
     background-color: #50207A;
+    margin: 0;
+   padding: 0;     
+}   
+main{
+    padding-top: 130px;
 }
-img {
-    width: 450px;
-    height: 450px;
+#img {
+    width: 500px;
+    height: 500px;
     border-radius: 15px;
+    display: flex;   
+    padding: 100px;
+    justify-content: left;
+    align-items: left;
+    /* display: block; */
 }
