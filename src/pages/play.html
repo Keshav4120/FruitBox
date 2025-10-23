@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FruitBox-Play</title>
-    <link rel="stylesheet" href="../assets/css/footer.css">
+    <title>FruitBox Flex</title>
+
+    <!-- Font + CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/play.css">
+    <link rel="stylesheet" href="../assets/css/footer.css">
 </head>
+
 <body>
     <main>
+        <!-- ===== NAVBAR ===== -->
         <header class="sticky">
             <div id="logo">
                 <img src="../assets/media/logo.png" alt="logo">
@@ -18,26 +24,64 @@
                 <span></span>
                 <span></span>
             </div>
-        
             <nav>
                 <ul id="navbar">
                     <li><a href="../index.html">Home</a></li>
-                    <li><a class="active"href="pages/play.html">Play</a></li>
-                    <!-- <li><a href="pages/leaderboard.html">Leaderboard</a></li> -->
-                    <li><a href="pages/about.html">About</a></li>
+                    <li><a class="active" href="play.html">Play</a></li>
+                    <li><a href="about.html">About</a></li>
                 </ul>
             </nav>
         </header>
 
-        <div id="img">
-            <img src="../assets/media/28256.jpg"  alt="">
-        </div>
+        <!-- ===== GAME WRAPPER ===== -->
+        <section id="game-wrapper">
+            <!-- LEFT SIDE -->
+            <div class="left-panel">
+                <h1 id="title"><span>FruitBox</span> Flex</h1>
 
-        <article id="logo">
-            <h1>FruitBox</h1>
-        </article>
+                <div class="level-container">
+                    <button onclick="previousLevel()">◀</button>
+                    <h2>Level <span id="level-number">1</span></h2>
+                    <button onclick="nextLevel()">▶</button>
+                </div>
+
+                <p id="instruction">
+                    Use <b>justify-content: center;</b> to move the apple 🍎 into the red basket 🧺.
+                </p>
+
+                <div class="css-editor">
+                    <h3>#container {</h3>
+                    <h3>&nbsp;&nbsp;&nbsp;display: flex;</h3>
+                    <textarea id="css-input" placeholder="Type your CSS here..."></textarea>
+                    <h3>}</h3>
+
+                    <div class="btn-group">
+                        <button id="submit-btn" onclick="checkSolution()">Submit</button>
+                        <button id="reset-btn" onclick="loadLevel(currentLevel)">Reset</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT SIDE -->
+            <div class="right-panel">
+                <div class="game-board">
+                    <div id="img-container">
+                        <img src="../assets/media/28256.jpg" alt="background">
+                    </div>
+                    <div id="game-container">
+                        <div id="flex-area">
+                            <div class="fruit">🍎</div>
+                        </div>
+                        <div class="basket red">🧺</div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
     </main>
-    <script src="../assets/JS/index.js"></script>
-    
+
+    <!-- ===== JS ===== -->
+    <script src="../assets/JS/game.js"></script>
 </body>
+
 </html>
