@@ -6,12 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FruitBox Flex</title>
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="../assets/css/footer.css">
-    <link rel="stylesheet" href="../assets/css/play.css">
-
-    <!-- Font -->
+    <!-- Font + CSS -->
     <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/play.css">
+    <link rel="stylesheet" href="../assets/css/footer.css">
 </head>
 
 <body>
@@ -47,17 +45,19 @@
                     <button onclick="nextLevel()">▶</button>
                 </div>
 
-                <p id="instruction">Use <b>justify-content: flex-end;</b> to move the apple 🍎 into the red basket 🧺.</p>
+                <p id="instruction">
+                    Use <b>justify-content: center;</b> to move the apple 🍎 into the red basket 🧺.
+                </p>
 
                 <div class="css-editor">
                     <h3>#container {</h3>
-                    <h3>&nbsp;&nbsp;&nbsp;display:flex;</h3>
+                    <h3>&nbsp;&nbsp;&nbsp;display: flex;</h3>
                     <textarea id="css-input" placeholder="Type your CSS here..."></textarea>
                     <h3>}</h3>
 
                     <div class="btn-group">
                         <button id="submit-btn" onclick="checkSolution()">Submit</button>
-                        <button id="reset-btn" onclick="resetCSS()">Reset</button>
+                        <button id="reset-btn" onclick="loadLevel(currentLevel)">Reset</button>
                     </div>
                 </div>
             </div>
@@ -69,10 +69,13 @@
                         <img src="../assets/media/28256.jpg" alt="background">
                     </div>
                     <div id="game-container">
-                        <div class="fruit">🍎</div>
+                        <div id="flex-area">
+                            <div class="fruit">🍎</div>
+                        </div>
                         <div class="basket red">🧺</div>
                     </div>
                 </div>
+
             </div>
         </section>
     </main>

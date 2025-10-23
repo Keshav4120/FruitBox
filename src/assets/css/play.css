@@ -153,39 +153,70 @@ body {
     max-width: 650px;
 }
 
+/* === GAME AREA FIX (APPLE ABOVE IMAGE) === */
 .game-board {
-    position: relative;
-    width: 100%;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+  position: relative;
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
 }
 
+/* Background image */
 #img-container img {
-    width: 100%;
-    height: auto;
-    display: block;
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
+/* Container that holds flex-area + basket */
 #game-container {
-    position: absolute;
-    top: 50px;
-    left: 50px;
-    right: 50px;
-    bottom: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none; /* image won't block */
 }
 
-/* ===== FRUITS & BASKETS ===== */
-.fruit, .basket {
-    font-size: 70px;
-    margin: 10px;
-    transition: 0.3s ease;
-    filter: drop-shadow(3px 3px 6px rgba(0,0,0,0.3));
+#flex-area {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: absolute; /* 👈 Added */
+  top: 0;
+  left: 0;
+  width: 100%;        /* 👈 poore game-container ke barabar */
+  height: 100%;       /* 👈 vertically bhi full */
+  padding: 60px;
+  box-sizing: border-box;
+  z-index: 5;         /* 👈 so it sits behind the basket but above background */
 }
+
+
+.fruit {
+  font-size: 80px;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.basket {
+  position: absolute;
+  right: 40px;       /* ye JS se overwrite hoga */
+  bottom: 40px;      /* ye bhi per-level change hoga */
+  font-size: 100px;
+  z-index: 10;
+  filter: drop-shadow(0 5px 10px rgba(0,0,0,0.4));
+  transition: all 0.5s ease; /* 👈 smooth move when position changes */
+}
+
+
+
+
+
 
 /* ===== FRUIT JUMP ANIMATION ===== */
 @keyframes fruitJump {
@@ -207,11 +238,11 @@ body {
 }
 
 /* ===== BASKET STYLE + POSITION FIX ===== */
-.basket {
+/* .basket {
     position: relative;
     top: 25px; /* basket thoda neeche */
-    filter: drop-shadow(0 5px 10px rgba(0,0,0,0.4));
-}
+    /* filter: drop-shadow(0 5px 10px rgba(0,0,0,0.4)); */
+/* }  */
 
 .basket.red {
     filter: hue-rotate(320deg) saturate(1.8) brightness(1.1)
