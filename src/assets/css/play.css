@@ -153,7 +153,7 @@ body {
     max-width: 650px;
 }
 
-/* === GAME AREA FIX (APPLE ABOVE IMAGE) === */
+
 .game-board {
   position: relative;
   width: 100%;
@@ -189,11 +189,11 @@ body {
   position: absolute; /* 👈 Added */
   top: 0;
   left: 0;
-  width: 100%;        /* 👈 poore game-container ke barabar */
-  height: 100%;       /* 👈 vertically bhi full */
+  width: 100%;        
+  height: 100%;      
   padding: 60px;
   box-sizing: border-box;
-  z-index: 5;         /* 👈 so it sits behind the basket but above background */
+  z-index: 5;         
 }
 
 
@@ -205,12 +205,12 @@ body {
 
 .basket {
   position: absolute;
-  right: 40px;       /* ye JS se overwrite hoga */
-  bottom: 40px;      /* ye bhi per-level change hoga */
+  right: 40px;       
+  bottom: 40px;      
   font-size: 100px;
   z-index: 10;
   filter: drop-shadow(0 5px 10px rgba(0,0,0,0.4));
-  transition: all 0.5s ease; /* 👈 smooth move when position changes */
+  transition: all 0.5s ease; 
 }
 
 
@@ -218,7 +218,6 @@ body {
 
 
 
-/* ===== FRUIT JUMP ANIMATION ===== */
 @keyframes fruitJump {
     0%, 100% {
         transform: translateY(0);
@@ -236,14 +235,6 @@ body {
     transform: scale(1.2);
     filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6));
 }
-
-/* ===== BASKET STYLE + POSITION FIX ===== */
-/* .basket {
-    position: relative;
-    top: 25px; /* basket thoda neeche */
-    /* filter: drop-shadow(0 5px 10px rgba(0,0,0,0.4)); */
-/* }  */
-
 .basket.red {
     filter: hue-rotate(320deg) saturate(1.8) brightness(1.1)
         drop-shadow(0 5px 10px rgba(0,0,0,0.4));
@@ -263,3 +254,90 @@ body {
 .fruit:hover, .basket:hover {
     transform: scale(1.15);
 }
+@media (max-width: 1024px) {
+  .basket {
+    font-size: 90px;
+    right: 20px !important;
+    bottom: 120px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .basket {
+    font-size: 70px;
+    right: 10px !important;
+    bottom: 80px !important;
+    transform: none !important;
+  }
+
+  #flex-area {
+    padding: 20px;
+  }
+}
+
+
+@media (max-width: 600px) {
+  body {
+    padding: 0;
+    margin: 0;
+  }
+
+  #game-wrapper {
+    flex-direction: column;
+    padding: 80px 20px 30px 20px;
+    gap: 30px;
+  }
+
+  .left-panel {
+    width: 100%;
+    text-align: center;
+  }
+
+  #title {
+    font-size: 34px;
+  }
+
+  .css-editor {
+    padding: 15px;
+  }
+
+  #css-input {
+    width: 100%;
+    margin-left: 0;
+    font-size: 15px;
+  }
+
+  .btn-group {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btn-group button {
+    width: 100%;
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .right-panel {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .game-board {
+    width: 100%;
+  }
+
+  #flex-area {
+    padding: 20px;
+  }
+
+  .fruit {
+    font-size: 60px;
+  }
+
+  .basket {
+    font-size: 80px;
+  }
+}
+
+

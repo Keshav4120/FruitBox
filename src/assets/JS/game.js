@@ -1,4 +1,4 @@
-// === FruitBox Flex - Multi-Level Dynamic Position System (Fixed Level 5) ===
+// === FruitBox Flex - Multi-Level Dynamic Position System (with Local Storage) ===
 
 const cssInput = document.getElementById("css-input");
 const flexArea = document.getElementById("flex-area");
@@ -47,18 +47,16 @@ const levels = [
     ],
     basketPos: { left: "50px", top: "100px", bottom: "auto" }
   },
-{
-  instruction:
-    "Use both <b>justify-content: flex-end;</b> and <b>align-items: center;</b> to move the apple 🍎 into the basket 🧺 on the right-center of the field.",
-  setupCSS: "justify-content: flex-start; align-items: flex-start;",
-  answer: [
-    "justify-content: flex-end; align-items: center;",
-    "align-items: center; justify-content: flex-end;"
-  ],
-  basketPos: { right: "40px", bottom: "200px" }
-}
-
-
+  {
+    instruction:
+      "Use both <b>justify-content: flex-end;</b> and <b>align-items: center;</b> to move the apple 🍎 into the basket 🧺 on the right-center of the field.",
+    setupCSS: "justify-content: flex-start; align-items: flex-start;",
+    answer: [
+      "justify-content: flex-end; align-items: center;",
+      "align-items: center; justify-content: flex-end;"
+    ],
+    basketPos: { right: "40px", bottom: "200px" }
+  }
 ];
 
 // === Helpers ===
@@ -79,7 +77,10 @@ function loadLevel(i) {
   currentLevel = i;
   levelNumber.textContent = i + 1;
   instructionEl.innerHTML = level.instruction;
-  cssInput.value = "";
+
+  // Restore text from localStorage (if available)
+  const savedCSS = localStorage.getItem("cssInput") || "";
+  cssInput.value = savedCSS;
 
   // Apply setup (for level 5 multiple fruits)
   if (level.setup) {
@@ -91,12 +92,18 @@ function loadLevel(i) {
   // Apply base CSS
   applyCss(level.setupCSS);
 
+  // Apply user CSS (if saved)
+  if (savedCSS) flexArea.style.cssText += savedCSS;
+
   // Basket position
   basket.style.right = level.basketPos.right || "auto";
   basket.style.left = level.basketPos.left || "auto";
   basket.style.bottom = level.basketPos.bottom || "auto";
   basket.style.top = level.basketPos.top || "auto";
   basket.style.transform = level.basketPos.transform || "none";
+
+  // Save level progress
+  localStorage.setItem("currentLevel", currentLevel);
 }
 
 // === Live Input ===
@@ -104,6 +111,9 @@ cssInput.addEventListener("input", () => {
   const userCSS = cssInput.value;
   const base = levels[currentLevel].setupCSS;
   flexArea.style.cssText = "display:flex;" + base + userCSS;
+
+  // Save current text to localStorage
+  localStorage.setItem("cssInput", userCSS);
 });
 
 // === Check Answer ===
@@ -116,9 +126,13 @@ function checkSolution() {
     alert(`🎉 Level ${currentLevel + 1} complete!`);
 
     if (currentLevel < levels.length - 1) {
-      setTimeout(() => loadLevel(currentLevel + 1), 1000);
+      setTimeout(() => {
+        localStorage.removeItem("cssInput"); // Clear last CSS
+        loadLevel(currentLevel + 1);
+      }, 1000);
     } else {
       setTimeout(() => alert("🎊 You completed all levels!"), 500);
+      localStorage.removeItem("cssInput");
     }
   } else {
     alert("❌ Try again!");
@@ -127,13 +141,24 @@ function checkSolution() {
 
 // === Navigation ===
 function nextLevel() {
-  if (currentLevel < levels.length - 1) loadLevel(currentLevel + 1);
+  if (currentLevel < levels.length - 1) {
+    localStorage.removeItem("cssInput");
+    loadLevel(currentLevel + 1);
+  }
 }
 function previousLevel() {
-  if (currentLevel > 0) loadLevel(currentLevel - 1);
+  if (currentLevel > 0) {
+    localStorage.removeItem("cssInput");
+    loadLevel(currentLevel - 1);
+  }
 }
 
 // === Init ===
 document.addEventListener("DOMContentLoaded", () => {
+  // Load saved level if any
+  const savedLevel = parseInt(localStorage.getItem("currentLevel"));
+  if (!isNaN(savedLevel)) {
+    currentLevel = savedLevel;
+  }
   loadLevel(currentLevel);
 });
