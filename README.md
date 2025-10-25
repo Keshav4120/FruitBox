@@ -39,7 +39,7 @@ Built using **pure HTML, CSS, and JavaScript**, without any frameworks.
 | **Version Control** | Git + GitHub |
 
 ---
-~
+```
 ## 📂 Folder Structure
 FruitBox/
 ├──src/
@@ -54,4 +54,3 @@ FruitBox/
 │  ├── media/ # Images, icons, resume, etc.
 │
 └── README.md
-~
