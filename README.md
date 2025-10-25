@@ -3,7 +3,7 @@
 
 > 🎮 A fun, interactive way to learn CSS Flexbox — created as part of my portfolio for interviews and personal projects.
 
-![FruitBox Banner](./assets/media/logo.png)
+![FruitBox Banner](./src/assets/media/logo.png)
 
 ---
 
