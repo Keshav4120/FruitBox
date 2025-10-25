@@ -35,10 +35,23 @@ Built using **pure HTML, CSS, and JavaScript**, without any frameworks.
 |-----------|-------------|
 | **Frontend** | HTML5, CSS3, JavaScript (Vanilla) |
 | **Design** | Flexbox, Custom Gradients, Glassmorphism |
-| **Hosting** | [Vercel](https://vercel.com/) |
+| **Hosting** | [Vercel]([https://vercel.com/](https://fruit-box-seven.vercel.app/)) |
 | **Version Control** | Git + GitHub |
 
 ---
 
 ## 📂 Folder Structure
+FruitBox/
+├──src/
+│  ├── index.html # Home page
+│  ├── pages/
+│  ├── play.html # The interactive game page
+│  ├── about.html # Portfolio/About page
+│  │
+│  ├── assets/
+│  ├── css/ # All stylesheets
+│  ├── js/ # All scripts
+│  ├── media/ # Images, icons, resume, etc.
+│
+└── README.md
 
