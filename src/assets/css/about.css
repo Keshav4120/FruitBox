@@ -1,0 +1,199 @@
+/* GLOBAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #2a085d, #50207a, #3b0b62);
+  color: white;
+  overflow-x: hidden;
+}
+
+/* HERO SECTION */
+.about-hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: radial-gradient(circle at center, #50207a, transparent 70%);
+  z-index: 0;
+  animation: pulse 6s ease-in-out infinite;
+}
+
+.hero-content {
+  z-index: 2;
+  max-width: 700px;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  color: #adff2f;
+  margin-bottom: 10px;
+}
+
+.hero-content span {
+  color: #ff48b9;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  margin-bottom: 30px;
+}
+
+.btn-glow {
+  text-decoration: none;
+  background: #ff48b9;
+  padding: 14px 30px;
+  border-radius: 30px;
+  color: white;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: 0.3s;
+  box-shadow: 0 0 20px #ff48b9;
+}
+
+.btn-glow:hover {
+  background: #adff2f;
+  color: #50207a;
+  box-shadow: 0 0 25px #adff2f;
+}
+
+/* ABOUT SECTION */
+.about-section {
+  padding: 100px 8%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.about-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  width: 100%;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 30px;
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  transition: all 0.4s ease;
+}
+
+.glass:hover {
+  transform: translateY(-10px);
+  background: rgba(255, 72, 185, 0.15);
+  border-color: #ff48b9;
+}
+
+.about-card h2 {
+  color: #adff2f;
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+}
+
+.about-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #f1f1f1;
+}
+
+.social {
+  text-align: center;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.social-links a {
+  text-decoration: none;
+  color: white;
+  border: 2px solid #ff48b9;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.social-links a:hover {
+  background: #ff48b9;
+  color: white;
+  transform: scale(1.1);
+}
+/* ===== RESUME CARD ===== */
+.resume-card {
+  text-align: center;
+}
+
+.resume-card p {
+  margin-bottom: 20px;
+  color: #f3f3f3;
+  line-height: 1.6;
+}
+
+.resume-btn {
+  display: inline-block;
+  text-decoration: none;
+  background: linear-gradient(90deg, #ff48b9, #adff2f);
+  color: #50207a;
+  font-weight: 700;
+  padding: 14px 28px;
+  border-radius: 30px;
+  box-shadow: 0 0 20px rgba(255, 72, 185, 0.6);
+  transition: 0.4s;
+  letter-spacing: 0.5px;
+}
+
+.resume-btn:hover {
+  background: linear-gradient(90deg, #adff2f, #ff48b9);
+  color: white;
+  box-shadow: 0 0 25px #adff2f, 0 0 35px #ff48b9;
+  transform: scale(1.05);
+}
+
+/* ===== Responsive Tweaks ===== */
+@media (max-width: 600px) {
+  .resume-btn {
+    padding: 12px 24px;
+    font-size: 0.95rem;
+  }
+}
+
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 25px 0;
+  font-size: 0.9rem;
+  background: #3a125c;
+  color: #ddd;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ANIMATIONS */
+@keyframes pulse {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+}

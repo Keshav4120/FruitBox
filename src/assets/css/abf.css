@@ -1,18 +1,22 @@
-/* ====== NAVBAR BASE ====== */
+/* ====== STICKY NAVBAR ====== */
 .sticky {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    background: #50207A;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 20px;
-    z-index: 100;
-    box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 18px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 999;
+  background: rgba(80, 32, 122, 0.25);
+  backdrop-filter: blur(15px);
+  border-bottom: 1.5px solid rgba(255, 72, 185, 0.3);
+  box-shadow: 0 0 20px rgba(255, 72, 185, 0.2);
+  animation: fadeSlideDown 1s ease forwards;
 }
+
+/* Logo */
 #logo img {
   height: 100px;
   transition: 0.4s;
@@ -22,45 +26,46 @@
   transform: scale(1.08);
 }
 
-/* ====== NAV LINKS ====== */
+/* NAV LINKS */
 nav ul {
-    list-style: none;
-    display: flex;
-    gap: 25px;
-    margin: 0;
-    padding: 0;
-    transition: max-height 0.4s ease, opacity 0.4s ease;
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
 }
 
 nav ul li a {
-    color: #FF48B9;
-    text-decoration: none;
-    position: relative;
-    font-size: 20px;
-    font-family: 'Baloo Bhai 2', "GummyBear";
-    transition: color 0.3s, transform 0.2s;
+  text-decoration: none;
+  font-family: 'Baloo Bhai 2', "GummyBear";
+  color: #ff48b9;
+  font-size: 20px;
+  font-weight: 500;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, #ff48b9, #adff2f);
+  transition: width 0.4s ease;
+  border-radius: 2px;
 }
 
 nav ul li a:hover {
   color: white;
-  text-shadow: 0 0 12px rgba(255, 255, 255, 0.9);
-}
-
-nav ul li a::after {
-    content: "";
-    position: absolute;
-    bottom: -6px;
-    left: 0;
-    width: 0%;
-    height: 2px;
-    background: white;
-    border-radius: 3px;
-    transition: width 0.4s ease;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.9);
 }
 
 nav ul li a:hover::after,
 nav ul li a.active::after {
-    width: 100%;
+  width: 100%;
+  background: linear-gradient(90deg, white, rgba(255, 255, 255, 0.8));
 }
 
 /* ===== HAMBURGER ===== */
@@ -146,4 +151,3 @@ nav ul li a.active::after {
     transform: translateY(0);
   }
 }
-
