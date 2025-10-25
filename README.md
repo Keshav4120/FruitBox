@@ -22,9 +22,7 @@ Built using **pure HTML, CSS, and JavaScript**, without any frameworks.
 ✅ Interactive, real-time CSS editor  
 ✅ Level-based challenges  
 ✅ Animated UI with smooth transitions  
-✅ Mobile responsive design  
-✅ Custom Blynk-style aesthetic  
-✅ Download Resume button (for my portfolio page)  
+✅ Mobile responsive design    
 ✅ Fully deployed on **Vercel**
 
 ---
