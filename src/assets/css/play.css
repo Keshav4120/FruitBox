@@ -1,4 +1,3 @@
-/* ===== MAIN STYLE ===== */
 body {
   background: #50207A;
   font-family: 'Baloo Bhai 2', cursive;
@@ -7,7 +6,6 @@ body {
   color: white;
 }
 
-/* ===== MAIN LAYOUT ===== */
 #game-wrapper {
   display: flex;
   justify-content: center;
@@ -17,7 +15,6 @@ body {
   box-sizing: border-box;
 }
 
-/* ===== LEFT SIDE ===== */
 .left-panel {
   flex: 1;
   max-width: 500px;
@@ -75,8 +72,6 @@ body {
   font-size: 18px;
   margin-bottom: 30px;
 }
-
-/* ===== CSS Editor ===== */
 .css-editor {
   background: #7a8b99;
   padding: 25px;
@@ -149,7 +144,6 @@ body {
   transform: scale(1.05);
 }
 
-/* ===== RIGHT SIDE ===== */
 .right-panel {
   flex: 1;
   max-width: 650px;
@@ -163,14 +157,13 @@ body {
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
 }
 
-/* Background image */
+
 #img-container img {
   width: 100%;
   height: auto;
   display: block;
 }
 
-/* Container that holds flex-area + basket */
 #game-container {
   position: absolute;
   top: 0;
@@ -213,8 +206,6 @@ body {
   transform: scale(1.2);
   filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6));
 }
-
-/* === Basket === */
 .basket {
   position: absolute;
   right: 5%;
@@ -242,7 +233,6 @@ body {
   transform: scale(1.15);
 }
 
-/* ===== RESPONSIVENESS ===== */
 
 @media (max-width: 1024px) {
   #game-wrapper {

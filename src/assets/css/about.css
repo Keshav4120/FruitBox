@@ -1,4 +1,4 @@
-/* GLOBAL */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 * {
   margin: 0;
   padding: 0;
@@ -12,7 +12,6 @@ body {
   overflow-x: hidden;
 }
 
-/* HERO SECTION */
 .about-hero {
   position: relative;
   height: 100vh;
@@ -72,7 +71,6 @@ body {
   box-shadow: 0 0 25px #adff2f;
 }
 
-/* ABOUT SECTION */
 .about-section {
   padding: 100px 8%;
   display: flex;
@@ -141,8 +139,7 @@ body {
   background: #ff48b9;
   color: white;
   transform: scale(1.1);
-}
-/* ===== RESUME CARD ===== */
+  }
 .resume-card {
   text-align: center;
 }
@@ -181,8 +178,6 @@ body {
   }
 }
 
-
-/* FOOTER */
 footer {
   text-align: center;
   padding: 25px 0;
@@ -192,7 +187,6 @@ footer {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* ANIMATIONS */
 @keyframes pulse {
   0%, 100% { opacity: 0.5; transform: scale(1); }
   50% { opacity: 1; transform: scale(1.05); }
